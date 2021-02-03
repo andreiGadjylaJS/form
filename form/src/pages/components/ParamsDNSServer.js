@@ -36,10 +36,10 @@ const ParamsDNSServer = ({ onChange, settings, path, disabled, /*errors*/ }) => 
             alignItems="flex-end">
             {
                 dnsLabels.inputLabels.map((item, index) => {
-                    console.log(item)
                     return <TextFieldComponent
                         label={item.label}
                         key={index}
+                        value={data.name}
                         disabled={disabled || data.isAutomatic}
                         onChangeText={(value) => onChangeText(value, item.name)}
                     />

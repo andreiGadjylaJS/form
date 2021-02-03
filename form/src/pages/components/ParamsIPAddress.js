@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import TextFieldComponent from '../../components/TextFieldComponent'
 import RadioComponent from '../../components/RadioComponent'
 import Grid from '@material-ui/core/Grid';
@@ -12,12 +12,16 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const ParamsIPAddress = ({ onChange, settings, disabled, path, /*errors*/ }) => {
+const ParamsIPAddress = ({ onChange, settings, disabled, path, parentValueSettings, /*errors*/ }) => {
     const classes = useStyles();
     const defaultValue = ipLabels.radioButtonLabels[0].value
 
     const [data, setData] = useState(settings)
 
+    // useEffect(() => {
+    //     setData(prevState => ({ ...prevState, ...settings }))
+    // }, [settings])
+    // console.log(data)
     const onChangeIsAutomatic = automatic => {
         const newData = { ...data, isAutomatic: !!automatic }
         setData(newData)

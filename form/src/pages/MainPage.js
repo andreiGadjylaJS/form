@@ -79,7 +79,7 @@ const MainPage = () => {
         console.log(JSON.stringify(paramsSettings))
         setParamsSettings(newDataForm)
     }
-    console.log(paramsSettings)
+    console.log()
     return (
         <Grid container className={classes.root}>
             <Grid container xs={12} spacing={2}>
@@ -88,6 +88,7 @@ const MainPage = () => {
                     <EthernetSettings
                         ethernetSettings={paramsSettings.ethernetSettings}
                         onChange={obj => onChange(obj, "ethernetSettings")}
+                        parentValueEthernetSettings={paramsSettings.ethernetSettings}
                     // errors={errors}
                     />
                 </Grid>
